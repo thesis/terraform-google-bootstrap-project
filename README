@@ -1,0 +1,51 @@
+:toc: macro
+
+= Module Name (Required)
+
+Module description
+
+:icons: font
+:numbered:
+toc::[]
+
+== Usage (Required)
+
+Sample module block showing required fields configured.  You can have
+multiple examples if it makes sense for the module.
+
+== Inputs (Required)
+
+Table of available module inputs in the format:
+
+[%header,cols=5*]
+|===
+|Name
+|Description
+|Type
+|Default
+|Required
+
+|`fancy_input`
+|This value sets how fancy my module is
+|string
+| `""`
+|yes
+
+|`bland_input`
+|These values set how bland my module is
+|list
+| `[]`
+|no
+|===
+
+== Notes (Optional)
+
+Anything quirky about the module folks may want to know about. Relevant
+links or additional useful information.  Format is up to you.
+
+== License (Required)
+
+If open-sourced list license, else:
+
+"Copyright Card For Coin Inc., D.B.A Thesis, 2019"
+
