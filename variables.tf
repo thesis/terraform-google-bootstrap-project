@@ -1,3 +1,10 @@
+# global vars
+variable "labels" {
+  description = "A list of key/value pairs to describe your resource.  Labels are akin to tags."
+  type        = "map"
+  default     = {}
+}
+
 # project resource vars
 variable "project_name" {
   description = "The name to give your project."
@@ -22,14 +29,9 @@ variable "project_owner_members" {
   default     = []
 }
 
+# Terraform backend bucket vars
 variable "location" {
-  description = "The region where resources are generated."
+  description = "The region to deploy the backend bucket in."
   type        = "string"
   default     = ""
-}
-
-variable "labels" {
-  description = "A list of key/value pairs to describe your resource.  Labels are akin to tags."
-  type        = "map"
-  default     = {}
 }
