@@ -1,0 +1,35 @@
+# project resource vars
+variable "project_name" {
+  description = "The name to give your project."
+  type        = "string"
+  default     = ""
+}
+
+variable "org_id" {
+  description = "The ID for the organization the project will be created under. Local ENV VAR"
+  type        = "string"
+  default     = ""
+}
+
+variable "billing_account" {
+  description = "The billing account to associate with your project.  Must be associated with org already. Local ENV VAR"
+  default     = ""
+}
+
+variable "project_owner_members" {
+  description = "A list of gcp users / service accounts to designate as owners of the project being created."
+  type        = "list"
+  default     = []
+}
+
+variable "location" {
+  description = "The region where resources are generated."
+  type        = "string"
+  default     = ""
+}
+
+variable "labels" {
+  description = "A list of key/value pairs to describe your resource.  Labels are akin to tags."
+  type        = "map"
+  default     = {}
+}
