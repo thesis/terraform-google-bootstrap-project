@@ -1,6 +1,6 @@
 :toc: macro
 
-= Module Name (Required)
+= Bootstrap Project
 
 Module description
 
@@ -8,10 +8,28 @@ Module description
 :numbered:
 toc::[]
 
-== Usage (Required)
+== Usage
 
-Sample module block showing required fields configured.  You can have
-multiple examples if it makes sense for the module.
+```
+locals {
+  labels {
+    contact     = "author@email.co"
+    environment = "fancy-dev"
+    vertical    = "fancy"
+  }
+}
+
+module "fancy_google_project" {
+  source                = "git@github.com:thesis/terraform-google-bootstrap-project.git"
+  project_name          = "fancy-dev"
+  org_id                = "xxxyyyzzz"
+  billing_account       = "111222333"
+  project_owner_members = ["john@email.co", "lilly@email.co",]
+  location              = "us-central1"
+  labels                = ${local.labels}
+}
+
+```
 
 == Inputs (Required)
 
@@ -19,32 +37,48 @@ Table of available module inputs in the format:
 
 [%header,cols=5*]
 |===
-|Name
+|`Name`
 |Description
 |Type
 |Default
 |Required
 
-|`fancy_input`
-|This value sets how fancy my module is
+|`project_name`
+|The name for your Google project.
 |string
 | `""`
 |yes
 
-|`bland_input`
-|These values set how bland my module is
+|`org_id`
+|The Google organization ID that the project will be assigned to.
+|string
+| `""`
+|yes
+
+|`billing_account`
+|The Google billing account that project charges will be assigned to.
+|list
+| `""`
+|yes
+
+|`project_owner_members`
+|List of administrators who will be given IAM role `owner` for the project.
 |list
 | `[]`
-|no
+|yes
+
+|`location`
+|The area where your bucket will be deployed.
+|string
+| `"us-east4"`
+|yes
 |===
 
 == Notes (Optional)
 
-Anything quirky about the module folks may want to know about. Relevant
-links or additional useful information.  Format is up to you.
+For a Thesis or a Thesis vertical project this should be the first module you run.
+It does require admin access on the GCP Organization level.
 
 == License (Required)
 
-If open-sourced list license, else:
-
-"Copyright Card For Coin Inc., D.B.A Thesis, 2019"
+Copyright Card For Coin Inc., D.B.A Thesis, 2019
