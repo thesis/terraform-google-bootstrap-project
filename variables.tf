@@ -33,5 +33,5 @@ variable "project_owner_members" {
 variable "location" {
   description = "The region to deploy the backend bucket in."
   type        = "string"
-  default     = ""
+  default     = "us-east4"
 }
