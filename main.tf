@@ -7,13 +7,13 @@ resource "google_project" "project" {
 }
 
 resource "random_id" "project_id" {
-  prefix      = "${var.name}-"
+  prefix      = "${var.project_name}-"
   byte_length = 2
 }
 
 resource "google_project_iam_member" "project_owner_members" {
   count   = "${length(var.project_owner_members) > 0 ? length(var.project_owner_members) : 0}"
-  project = "${google_project.a_project.id}"
+  project = "${google_project.project.id}"
   role    = "roles/owner"
   member  = "${element(var.project_owner_members, count.index)}"
 }
