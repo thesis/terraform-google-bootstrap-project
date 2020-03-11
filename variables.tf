@@ -29,6 +29,18 @@ variable "project_owner_members" {
   default     = []
 }
 
+variable "project_service_list" {
+  description = "List of services or APIs that will be enabled on project creation."
+  type        = "list"
+  default     = []
+}
+
+variable "disable_on_destroy" {
+  description = "Determines whether to disable the service when the terraform resource is destroyed (true/ false)"
+  type        = "string"
+  default     = "true"
+}
+
 # Terraform backend bucket vars
 variable "location" {
   description = "The region to deploy the backend bucket in."
