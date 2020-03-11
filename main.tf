@@ -19,8 +19,9 @@ resource "google_project_iam_member" "project_owner_members" {
 }
 
 resource "google_project_service" "project" {
+  count   = "${length(var.project_service_list)}"
   project = "${google_project.project.project_id}"
-  service = "${var.service_name}"
+  service = "${var.project_service_list[count.index]}"
 }
 
 resource "google_storage_bucket" "terraform_backend_bucket" {

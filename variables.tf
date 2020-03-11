@@ -29,10 +29,10 @@ variable "project_owner_members" {
   default     = []
 }
 
-variable "service_name" {
-  description = "The name an the API or service that will be enabled on project creation (eg `compute.googleapis.com`)."
-  type        = "string"
-  default     = ""
+variable "project_service_list" {
+  description = "List of services or APIs that will be enabled on project creation."
+  type        = "list"
+  default     = []
 }
 
 # Terraform backend bucket vars
