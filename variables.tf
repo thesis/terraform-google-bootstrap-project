@@ -35,12 +35,6 @@ variable "project_service_list" {
   default     = []
 }
 
-variable "disable_dependent_services" {
-  description = "Determines whether services that are enabled and which depend on this service should also be disabled when this service is destroyed (true/ false)."
-  type        = "string"
-  default     = "false"
-}
-
 variable "disable_on_destroy" {
   description = "Determines whether to disable the service when the terraform resource is destroyed (true/ false)"
   type        = "string"

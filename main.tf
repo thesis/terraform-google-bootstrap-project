@@ -19,11 +19,10 @@ resource "google_project_iam_member" "project_owner_members" {
 }
 
 resource "google_project_service" "project" {
-  count                      = "${length(var.project_service_list)}"
-  project                    = "${google_project.project.project_id}"
-  service                    = "${var.project_service_list[count.index]}"
-  disable_dependent_services = "${var.disable_dependent_services}"
-  disable_on_destroy         = "${var.disable_on_destroy}"
+  count              = "${length(var.project_service_list)}"
+  project            = "${google_project.project.project_id}"
+  service            = "${var.project_service_list[count.index]}"
+  disable_on_destroy = "${var.disable_on_destroy}"
 }
 
 resource "google_storage_bucket" "terraform_backend_bucket" {
