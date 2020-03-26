@@ -43,15 +43,26 @@ module "fancy_google_project" {
 ```
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-<!-- The following Inputs example will be over-written by pre-commit hooks,
-  and is here only as an example in case you opt not to use the hooks. -->
 ## Inputs
 
-Table of available module inputs in the format:
+| Name | Description | Type | Default | Required |
+|------|-------------|:----:|:-----:|:-----:|
+| billing\_account | The billing account to associate with your project.  Must be associated with org already. Local ENV VAR | string | `""` | no |
+| disable\_on\_destroy | Determines whether to disable the service when the terraform resource is destroyed (true/ false) | string | `"true"` | no |
+| labels | A list of key/value pairs to describe your resource.  Labels are akin to tags. | map | `<map>` | no |
+| location | The region to deploy the backend bucket in. | string | `"us-east4"` | no |
+| org\_id | The ID for the organization the project will be created under. Local ENV VAR | string | `""` | no |
+| project\_name | The name to give your project. | string | `""` | no |
+| project\_owner\_members | A list of gcp users / service accounts to designate as owners of the project being created. | list | `<list>` | no |
+| project\_service\_list | List of services or APIs that will be enabled on project creation. | list | `<list>` | no |
 
-|Name | Description | Type |Default | Required
---- | --- | --- | --- | --- |
-`inputName`| Description of this input | input type | `default value` | boolean
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| project\_id |  |
+| project\_name |  |
+| terraform\_backend\_bucket\_name |  |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
