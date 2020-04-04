@@ -2,7 +2,8 @@
 <!-- Module Name and description are required -->
 # Google Bootstrap Project Module
 
-<!-- TODO: Add description -->
+Used for spinning up a new Google project.  Produces a project, admin users,
+and a bucket for Terraform remote state.
 
 <!-- Compatibility section is optional -->
 ## Compatibility
@@ -18,9 +19,8 @@ along the following lines:
 
 There are multiple examples included in the [examples](./examples/) folder but
 simple usage is as follows:
- -->
-Sample module block showing required fields configured.  You can have
-multiple examples if it makes sense for the module.
+
+-->
 
 ```hcl
 locals {
@@ -39,6 +39,8 @@ module "fancy_google_project" {
   project_owner_members = ["john@email.co", "lilly@email.co",]
   location              = "us-central1"
   labels                = ${local.labels}
+  project_service_list  = "["api-you-want-enabled-at-project-creation.googleapis.com"]"
+
 }
 ```
 
