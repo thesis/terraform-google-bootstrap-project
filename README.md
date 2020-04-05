@@ -78,6 +78,3 @@ It does require admin access on the GCP Organization level.
 ## License
 
 See [LICENSE](./LICENSE) for full details.
-
-<!-- Before open-sourcing this module, Remove this comment and update the
-  LICENSE file at the repo root. Else: Copyright Thesis, Inc., 2020 -->
